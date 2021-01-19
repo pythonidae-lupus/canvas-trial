@@ -1,25 +1,36 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
+import React from "react";
 import './App.css';
+import ImageSlider from './pages/ImageSlider';
+import { SliderData } from './pages/sliderData';
+// import Nav from './pages/navigation.js'
+import { theme } from "@chakra-ui/react";
+import Header from "./pages/Header";
+import { ChakraProvider, CSSReset } from "@chakra-ui/react";
+import { extendTheme } from "@chakra-ui/react"
+import { createBreakpoints } from "@chakra-ui/theme-tools"
+
+const breakpoints = createBreakpoints({sm:"320px", md:"768px", lg:"1200px",xl:"1440px"});
+
+const newTheme = {
+  ...theme,
+  breakpoints,
+};
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    
+      
+      <ChakraProvider theme={newTheme}>
+        <CSSReset />
+
+        <Header />
+        <ImageSlider slides={SliderData} />
+      </ChakraProvider>
+      
+    
   );
 }
 
 export default App;
+
