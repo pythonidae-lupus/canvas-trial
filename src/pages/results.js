@@ -10,6 +10,12 @@ import {
   ModalCloseButton,
 } from "@chakra-ui/react"
 import Winners from './components/winners';
+import pic1 from './components/paintings/pic1.jpg'
+import pic2 from './components/paintings/pic2.jpg'
+import pic3 from './components/paintings/pic3.jpg'
+import pic4 from './components/paintings/pic4.jpg'
+import pic5 from './components/paintings/pic5.jpg'
+import pic6 from './components/paintings/pic6.jpg'
 
 function Results() {
 
@@ -74,12 +80,12 @@ function Results() {
 					</VStack>
 				</GridItem>
 				<GridItem colSpan={2} border='2px' borderColor='white' align='center'>
-					<Winners/>
-					<Winners/>
-					<Winners/>
-					<Winners/>
-					<Winners/>
-					<Winners/>
+					<Winners imgSrc={pic1} title='1st prize'/>
+					<Winners imgSrc={pic2} title='2nd prize'/>
+					<Winners imgSrc={pic3} title='3rd prize'/>
+					<Winners imgSrc={pic4} title='4th prize'/>
+					<Winners imgSrc={pic5} title='5th prize'/>
+					<Winners imgSrc={pic6} title='6th prize'/>
 				</GridItem>
 			</Grid>
  		</Box>
