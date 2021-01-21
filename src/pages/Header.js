@@ -1,45 +1,73 @@
 import React from "react";
-import { Box, Heading, Flex, Text, Button } from "@chakra-ui/react";
+import { Box, Heading, Flex, Text, Button, HStack } from "@chakra-ui/react";
+import {
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
+  MenuItemOption,
+  MenuGroup,
+  MenuOptionGroup,
+  MenuIcon,
+  MenuCommand,
+  MenuDivider,
+} from "@chakra-ui/react"
 
 const MenuItems = ({ children }) => (
-  <Text textAlign="center" _hover = {{
-            background : " white",
-            color:"#e61755",
-          }}
-          // ml={0}
-          // pl={0}
+  <Text 
+          textAlign="center" 
+          _hover = {{ background : " white",color:"#e61755" }}
           height="90px"
           pt={8}
           mt={{ base: 4, lg: 0 }} 
           mr={6} 
           display="block"
-          // borderRadius="3px"
           fontSize="xl"
-          w="80px"
-          >
-    
+          w="80px">
       {children}
-    
   </Text>
 );
+
+
 
 // Note: This code could be better, so I'd recommend you to understand how I solved and you could write yours better :)
 const Header = (props) => {
   const [show, setShow] = React.useState(false);
   const handleToggle = () => setShow(!show);
+  const links = ['Home', 'Results', 'About', 'Steps', 'Rules', 'Enter', 'Contact', 'Login']
 
+  //creating menuitem for the dropdown
+  const navLink =()=> {
+    
+    return links.map((link)=>{
+      return (
+       <MenuItem key={link} _hover={{background:"white", color:"#e61755"}} _focus={{outline:0}}>{link}</MenuItem> 
+      )
+    })
+  };
+
+  const navLinkLg =()=> {
+    return links.map((link)=>{
+      return (
+       <MenuItems key={link+'1'} _hover={{background:"white", color:"#e61755"}} _focus={{outline:0}}>{link}</MenuItems> 
+      )
+    })
+
+    
+  };
   return (
     <Flex
+      w="100%"
       as="nav"
-      align="center"
-      justify="space-between"
-      wrap="wrap"
       pr="1.5rem"
       pl="1.5rem"
       pd="1.5rem"
+      wrap="wrap"
       bg="#e61755"
       color="white"
-      w="100%"
+      align="center"
+      position="relative"
+      justify="space-between"
       {...props}
       >
       <Flex align="center" mr={5}>
@@ -47,37 +75,54 @@ const Header = (props) => {
           CanvasCreations
         </Heading>
       </Flex>
-
-      <Box display={{ base: "block", lg: "none" }} onClick={handleToggle} _hover = {{
-            background : "#white",
-            color:"#e61755"
-          }}>
-        <svg
-          fill="white"
-          width="20px"
-          viewBox="0 0 20 20"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <title>Menu</title>
-          <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
-        </svg>
-      </Box>
-
       <Box
-        display={{ base: show ? "block" : "none", lg: "flex" }}
+        display={{ base: "none",lg:"block" }}
         width={{ base: "full", lg: "auto" }}
         alignItems="center"
         flexGrow={1}
-
       >
-        <MenuItems >Home</MenuItems>
-        <MenuItems>Results</MenuItems>
-        <MenuItems>About</MenuItems>
-        <MenuItems >Steps</MenuItems>
-        <MenuItems >Rules</MenuItems>
-        <MenuItems>Enter</MenuItems>
-        <MenuItems>Contact</MenuItems>
+        <HStack>
+          {navLinkLg()}
+        </HStack>
       </Box>
+      
+
+      <Menu 
+        display = {{ 
+          base: show ? "block" : "none", 
+          lg: "flex" 
+        }}
+        width = {{ 
+          base: "full", 
+          lg: "auto" 
+        }}
+        alignItems="center"
+        flexGrow={1}
+      >
+      
+        <MenuButton 
+          background="#e61755" 
+          borderRadius="1px"
+          as={Button} 
+          display = {{ base: "block", lg : "none"}} 
+          _hover = {{ bg : "white", color:"#e61755" }}
+          _expanded={{ bg: "white", color:"#e61755" }}
+          _focus={{ outline: 0}}
+        >
+          Menu
+        </MenuButton>
+        
+        <MenuList 
+          borderRadius="1px" 
+          background="#e61755" 
+          color="white"
+          display = {{lg:"none"}}
+          _focus={{ outline: 0}}
+        >
+          {navLink()}
+        </MenuList>
+      
+      </Menu>
 
       <Box
         display={{ base: show ? "block" : "none", lg: "block" }}
@@ -92,3 +137,36 @@ const Header = (props) => {
 };
 
 export default Header;
+
+//line 64
+// <Box display={{ base: "block", lg: "none" }} onClick={handleToggle} _hover = {{
+            // background : "#white",
+            // color:"#e61755"
+          // }}>
+        // <svg
+          // fill="white"
+          // width="20px"
+          // viewBox="0 0 20 20"
+          // xmlns="http://www.w3.org/2000/svg"
+        // >
+          // <title>Menu</title>
+          // <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+        // </svg>
+      // </Box>
+
+//replace line 66
+  // <Box
+  //       display={{ base: show ? "block" : "none", lg: "flex" }}
+  //       width={{ base: "full", lg: "auto" }}
+  //       alignItems="center"
+  //       flexGrow={1}
+        
+  //     >
+  //       <MenuItems  >Home</MenuItems>
+  //       <MenuItems>Results</MenuItems>
+  //       <MenuItems>About</MenuItems>
+  //       <MenuItems >Steps</MenuItems>
+  //       <MenuItems >Rules</MenuItems>
+  //       <MenuItems>Enter</MenuItems>
+  //       <MenuItems>Contact</MenuItems>
+  //     </Box>

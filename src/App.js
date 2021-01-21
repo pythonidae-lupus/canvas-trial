@@ -1,11 +1,13 @@
 // import logo from './logo.svg';
 import React from "react";
 import './App.css';
-import ImageSlider from './pages/ImageSlider';
 import { SliderData } from './pages/sliderData';
 // import Nav from './pages/navigation.js'
 import { theme } from "@chakra-ui/react";
 import Header from "./pages/Header";
+import MenuBar from "./pages/menu"
+import ImageSlider from './pages/ImageSlider';
+import Results from './pages/results';
 import { ChakraProvider, CSSReset } from "@chakra-ui/react";
 import { extendTheme } from "@chakra-ui/react"
 import { createBreakpoints } from "@chakra-ui/theme-tools"
@@ -24,13 +26,15 @@ function App() {
       <ChakraProvider theme={newTheme}>
         <CSSReset />
 
-        <Header />
+        <Header className="header"/>
         <ImageSlider slides={SliderData} />
+        <Results />
       </ChakraProvider>
       
     
   );
 }
+ 
 
 export default App;
 

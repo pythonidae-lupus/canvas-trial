@@ -5,6 +5,9 @@
 
 }
 
+.header {
+  z-index:10;
+}
 
 .slider {
   margin-top:6vh;
@@ -48,7 +51,7 @@
   right: 32px;
   font-size: 3rem;
   color: #000;
-  z-index: 10;
+  z-index: 1;
   cursor: pointer;
   user-select: none;
 }
@@ -59,7 +62,7 @@
   left: 32px;
   font-size: 3rem;
   color: #000;
-  z-index: 10;
+  z-index: 1;
   cursor: pointer;
   user-select: none;
 }
