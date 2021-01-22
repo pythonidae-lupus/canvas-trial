@@ -18,7 +18,14 @@ function Winners(props) {
   return (
     <div>
     {console.log(props.imgSrc)}
-      <Button onClick={onOpen} bg='#e61755' borderRadius='1px' color='white' mt={8}>{props.title}</Button>
+      <Button   onClick={onOpen} 
+                bg='#e61755' borderRadius='1px' 
+                color='white' w='100%' mt={8} 
+                _hover={{background:'white', color:'#e61755'}} 
+                _focus={{ outline: 0}}
+                >
+                {props.title}
+      </Button>
 
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
@@ -31,7 +38,7 @@ function Winners(props) {
           </Box>
           </ModalBody>
           <ModalFooter>
-            <Button bg="#e61755" color='white' mr={3} onClick={onClose}>
+            <Button bg="#e61755" color='white' mr={3} onClick={onClose} _focus={{ outline: 0}} _hover={{background:'#e61755', color:'white'}}>
               Close
             </Button>
           </ModalFooter>
