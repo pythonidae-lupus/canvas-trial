@@ -1,5 +1,6 @@
 import React from 'react';
-import { Text, Heading, VStack, Divider, Stack } from '@chakra-ui/react';
+import { Box, Text, Heading, VStack, Divider, Stack } from '@chakra-ui/react';
+import {FaPaintBrush} from 'react-icons/fa';
 
 function Judges(){
 	return(
@@ -7,14 +8,19 @@ function Judges(){
 			<Text fontSize="20px">
 						JUDGES
 					</Text>
-					<Text>
+					<Text fontSizw="15px">
 						National Art Competition Season 1
 					</Text>
 					<Stack direction='row' h="86%" p={4}>
 					<Divider orientation='vertical'/>
 					<VStack float='left' pl={3}>
 					<br/>
+					<Stack direction='row'>
+					<Box pt={2}>
+					<FaPaintBrush/>
+					</Box>
 						<Text>
+
 							Lorem Ipsum
 							<br/>
 							<Text as='i'>
@@ -23,36 +29,55 @@ function Judges(){
 								adipiscing elit
 							</Text>
 						</Text>
+						</Stack>
 						<Divider orientation='horizontal' colorScheme='white'/>
+						<Stack direction='row'>
+					<Box pt={2}>
+					<FaPaintBrush/>
+					</Box>
 						<Text>
-						Ipsum Lorem
-						<br/>
+
+							Lorem Ipsum
+							<br/>
 							<Text as='i'>
 								dolor sit amet consectetur
 								<br/>
 								adipiscing elit
 							</Text>
 						</Text>
+						</Stack>
 						<Divider orientation='horizontal' colorScheme='white'/>
+						<Stack direction='row'>
+					<Box pt={2}>
+					<FaPaintBrush/>
+					</Box>
 						<Text>
-						Lopsum Irem
-						<br/>
+
+							Lorem Ipsum
+							<br/>
 							<Text as='i'>
 								dolor sit amet consectetur
 								<br/>
 								adipiscing elit
 							</Text>
 						</Text>
+						</Stack>
 						<Divider orientation='horizontal' colorScheme='white'/>
+						<Stack direction='row'>
+					<Box pt={2}>
+					<FaPaintBrush/>
+					</Box>
 						<Text>
-						Irem Lopsum
-						<br/>
+
+							Lorem Ipsum
+							<br/>
 							<Text as='i'>
 								dolor sit amet consectetur
 								<br/>
 								adipiscing elit
 							</Text>
 						</Text>
+						</Stack>
 					</VStack>
 					</Stack>
 					</div>
