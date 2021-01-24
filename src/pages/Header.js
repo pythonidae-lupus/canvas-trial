@@ -12,6 +12,7 @@ import {
   MenuCommand,
   MenuDivider,
 } from "@chakra-ui/react"
+import ScrollIntoView from 'react-scroll-into-view';
 
 const MenuItems = ({ children }) => (
   <Text 
@@ -41,7 +42,11 @@ const Header = (props) => {
     
     return links.map((link)=>{
       return (
-       <MenuItem key={link} _hover={{background:"white", color:"#e61755"}} _focus={{outline:0}}>{link}</MenuItem> 
+        <MenuItem key={link} _hover={{background:"white", color:"#e61755"}} _focus={{outline:0}}>
+          <ScrollIntoView selector={'#'+  link}>
+            {link}
+          </ScrollIntoView>
+        </MenuItem> 
       )
     })
   };
@@ -49,7 +54,11 @@ const Header = (props) => {
   const navLinkLg =()=> {
     return links.map((link)=>{
       return (
-       <MenuItems key={link+'1'} _hover={{background:"white", color:"#e61755"}} _focus={{outline:0}}>{link}</MenuItems> 
+        <MenuItems key={link+'1'} _hover={{background:"white", color:"#e61755"}} _focus={{outline:0}}>
+          <ScrollIntoView selector={'#'+link}>
+            {link}
+          </ScrollIntoView>
+        </MenuItems> 
       )
     })
 

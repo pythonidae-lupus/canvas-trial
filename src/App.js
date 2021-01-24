@@ -13,8 +13,9 @@ import Faq from './pages/faq';
 import Opportunity from './pages/opportunity';
 import FaceOfTheWeek from './pages/components/face';
 import Contact from './pages/contact';
-import { ChakraProvider, CSSReset, extendTheme, theme } from "@chakra-ui/react";
+import { ChakraProvider, CSSReset, extendTheme, theme, Button } from "@chakra-ui/react";
 import { createBreakpoints } from "@chakra-ui/theme-tools";
+import ScrollIntoView from 'react-scroll-into-view';
 
 
 const breakpoints = createBreakpoints({sm:"320px", md:"768px", lg:"1200px",xl:"1440px"});
@@ -30,16 +31,38 @@ function App() {
       
       <ChakraProvider theme={newTheme}>
         <CSSReset />
-
-        <Header className="header"/>
+        
+        <div id='Home'>
+          <Header className="header"/>
+        </div>
+        
         <ImageSlider slides={SliderData} />
-        <Results />
-        <About/>
-        <Steps/>
-        <Faq/>
-        <Opportunity/>
+        
+        <div id='Results'>
+          <Results/>
+        </div>
+        
+        <div id='About'>
+          <About/>
+        </div>
+        
+        <div id='Steps'>
+          <Steps/>
+        </div>
+        
+        <div id='Rules'>
+          <Faq/>
+        </div>
+        
+        <div id='Enter'>
+          <Opportunity/>
+        </div>
+        
         <FaceOfTheWeek/>
-        <Contact/>  
+        
+        <div id='Contact'>
+          <Contact/>  
+        </div>
       </ChakraProvider>
       
     
