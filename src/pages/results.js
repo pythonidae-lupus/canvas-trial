@@ -51,10 +51,11 @@ function Results() {
 				</GridItem>
 				
 				<GridItem colSpan={3} w='80vw' color='white' display={{ base: "block",lg:"none" }}>
-					<AccordionComp 	firstTitle='Judges' 
-									firstContent={Judges()} 
-									secondTitle='Winners' 
-									secondContent={ArtList()}
+					<AccordionComp 	Title='Judges' 
+									Content={Judges()}
+								/> 
+					<AccordionComp	Title='Winners' 
+									Content={ArtList()}
 									/>
 				</GridItem>
 			</Grid>

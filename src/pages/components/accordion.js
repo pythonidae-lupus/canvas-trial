@@ -10,31 +10,33 @@ import {
 
 function AccordionComp(props){
 return (
-  <Accordion allowMultiple >
+  <Accordion pt=  {2} allowMultiple >
   <AccordionItem>
     <AccordionButton _focus={{ outline: 0}}>
       <Box flex="1" textAlign="left">
-        {props.firstTitle}
+        {props.Title}
       </Box>
       <AccordionIcon />
     </AccordionButton>
     <AccordionPanel pb={4}>
-      {props.firstContent}
+      {props.Content}
     </AccordionPanel>
   </AccordionItem>
 
-  <AccordionItem>
-    <AccordionButton _focus={{ outline: 0}}>
-      <Box flex="1" textAlign="left">
-        {props.secondTitle}
-      </Box>
-      <AccordionIcon />
-    </AccordionButton>
-    <AccordionPanel pb={4}>
-      {props.secondContent}
-    </AccordionPanel>
-  </AccordionItem>
+  
 </Accordion>
 )}
 
 export default AccordionComp;
+
+// <AccordionItem>
+//     <AccordionButton _focus={{ outline: 0}}>
+//       <Box flex="1" textAlign="left">
+//         {props.secondTitle}
+//       </Box>
+//       <AccordionIcon />
+//     </AccordionButton>
+//     <AccordionPanel pb={4}>
+//       {props.secondContent}
+//     </AccordionPanel>
+//   </AccordionItem>

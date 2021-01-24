@@ -8,6 +8,11 @@ import MenuBar from "./pages/menu"
 import ImageSlider from './pages/ImageSlider';
 import Results from './pages/results';
 import About from './pages/about';
+import Steps from './pages/howToApply';
+import Faq from './pages/faq';
+import Opportunity from './pages/opportunity';
+import FaceOfTheWeek from './pages/components/face';
+import Contact from './pages/contact';
 import { ChakraProvider, CSSReset, extendTheme, theme } from "@chakra-ui/react";
 import { createBreakpoints } from "@chakra-ui/theme-tools";
 
@@ -30,6 +35,11 @@ function App() {
         <ImageSlider slides={SliderData} />
         <Results />
         <About/>
+        <Steps/>
+        <Faq/>
+        <Opportunity/>
+        <FaceOfTheWeek/>
+        <Contact/>  
       </ChakraProvider>
       
     
